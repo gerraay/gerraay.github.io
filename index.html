@@ -185,14 +185,20 @@
         </style>
         
         <script>
+        <script>
         function c(val)
+        {
+            if (document.getElementById("d").value == null || document.getElementById("d").value == "0")
+                document.getElementById("d").value=val;
+            else
+                document.getElementById("d").value+=val;   
+        }
+            
+        function v(val)
         {
             document.getElementById("d").value=val;
         }
-        function v(val)
-        {
-            document.getElementById("d").value+=val;
-        }
+            
         function e() 
         { 
             try 
@@ -214,7 +220,7 @@
         <form>
             <table>
                 <div class="clear">
-                    <input type="button" class="button gray" value="C" onclick='c("")'>
+                    <input type="button" class="button gray" value="C" onclick='v("")'>
                     </div>
 
                     <div class="display">
@@ -224,16 +230,16 @@
                     <div class="keys">
                         <tr id="tr-3">
                             <td align="center">
-                                <input type="button" class="button pink" value="/" onclick='v("/")'>
+                                <input type="button" class="button pink" value="/" onclick='c("/")'>
                             </td>
                             <td align="center">
-                                <input type="button" class="button pink" value="x" onclick='v("*")'>
+                                <input type="button" class="button pink" value="x" onclick='c("*")'>
                             </td>
                             <td align="center">
-                                <input type="button" class="button pink" value="+" onclick='v("+")'>
+                                <input type="button" class="button pink" value="+" onclick='c("+")'>
                             </td>
                             <td align="center">
-                                <input type="button" class="button pink" value="-" onclick='v("-")'>
+                                <input type="button" class="button pink" value="-" onclick='c("-")'>
                             </td>
                         </tr>
                         <tr id="tr-4">
@@ -241,42 +247,42 @@
                                 <input type="button" class="long button black" value="0" onclick='c("0")'>
                             </td>
                             <td align="center">
-                                <input type="button" class="button black" value="1" onclick='v("1")'>
+                                <input type="button" class="button black" value="1" onclick='c("1")'>
                             </td>
                             <td align="center">
-                                <input type="button" class="button black" value="2" onclick='v("2")'>
+                                <input type="button" class="button black" value="2" onclick='c("2")'>
                             </td>
                             <td rowspan="4" align="center">
-                                <input type="button" class="long button black" value="9" onclick='v("9")'>
+                                <input type="button" class="long button black" value="9" onclick='c("9")'>
                             </td>
                         </tr>
                         <tr id="tr-5">
                             <td align="center">
-                                <input type="button" class="button black" value="3" onclick='v("3")'>
+                                <input type="button" class="button black" value="3" onclick='c("3")'>
                             </td>
                             <td align="center">
-                                <input type="button" class="button black" value="4" onclick='v("4")'>
+                                <input type="button" class="button black" value="4" onclick='c("4")'>
                             </td>
                         </tr>
                         <tr id="tr-6">
                             <td align="center">
-                                <input type="button" class="button black" value="5" onclick='v("5")'>
+                                <input type="button" class="button black" value="5" onclick='c("5")'>
                             </td>
                             <td align="center">
-                                <input type="button" class="button black" value="6" onclick='v("6")'>
+                                <input type="button" class="button black" value="6" onclick='c("6")'>
                             </td>
                         </tr>
                         <tr id="tr-7">
                             <td align="center">
-                                <input type="button" class="button black" value="7" onclick='v("7")'>
+                                <input type="button" class="button black" value="7" onclick='c("7")'>
                             </td>
                             <td align="center">
-                                <input type="button" class="button black" value="8" onclick='v("8")'>
+                                <input type="button" class="button black" value="8" onclick='c("8")'>
                             </td>
                         </tr>
                         <tr id="tr-8">
                             <td align="center">
-                                <input type="button" class="button pink" value="." onclick='v(".")'>
+                                <input type="button" class="button pink" value="." onclick='c(".")'>
                             </td>
                             <td colspan="4" align="center">
                                 <input type="button" class="long button orange" value="=" onclick='e()'>
